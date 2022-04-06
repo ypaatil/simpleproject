@@ -17,6 +17,10 @@ if(move_uploaded_file($_FILES['file']['tmp_name'],$location.$filename)){
 }
 echo json_encode($response);
 
+
 exit(0);
 
+
+
+exit;
 
