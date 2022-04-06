@@ -1,0 +1,27 @@
+<div ng-app="li-app" ng-controller="PostFormController">
+	<div class="alert icon-alert with-arrow alert-success" role="alert" ng-show="success">
+		<i class="fa fa-fw fa-check-circle"></i>
+		<strong> Success ! </strong> Data saved successfully. 
+	</div>
+	<div class="alert icon-alert with-arrow alert-danger" role="alert" ng-show="error">
+		<i class="fa fa-fw fa-times-circle"></i>
+		<strong> Note !</strong> Data saving failed. 
+	</div>
+
+	<form name="post_details" ng-submit="postNow()">
+	<div class="form-group">
+		<label class="required">Post Title </label>
+		<input type="text" name="post_title" ng-model="postDetails.post_title" class="form-control" required />
+		<span class="text-danger" ng-show="errorTitle">{{errorTitle}}</span>
+	</div>
+	<div class="form-group">
+		<label class="required">Post Description </label>
+		<textarea name="post_description" ng-model="postDetails.post_description" class="form-control" rows="8" required></textarea>
+		<span class="text-danger" ng-show="errorDescription">{{errorDescription}}</span>
+	</div>
+	<br />
+	<div class="form-group">
+		<input type="submit" name="post" class="btn btn-primary" ng-disabled="post_details.$invalid" value="Post Now"/>
+	</div>
+	</form>
+</div>

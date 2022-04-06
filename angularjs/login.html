@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Form</title>
+	  <script src="angular.js"></script>
+</head>
+<body ng-app="login" ng-controller="loginController">
+<form name="loginForm" > 
+	<input type="text" ng-model="username">
+	<input type="password" ng-model="userpassword">
+	<input type="submit" ng-click="insertdata()" value="Login">
+</form>
+
+<script>
+    var app = angular.module('login',[]);
+    app.controller('loginController',function($scope,$http){    
+        $scope.insertdata=function(){      
+            $http.post("login.php", {
+                'username':$scope.username,
+                'userpassword':$scope.userpassword
+            }).then(function(response){
+            	alert(response.data);
+            	/*
+            	$scope.users = response.data; 
+            	alert(users.val) */
+                    console.log("Login Successfully");
+                },function(error){
+                    alert("Sorry! Data is not valid!");
+                    console.error(error);
+
+                });
+            }
+        });
+
+</script>
+
+</body>
+</html>
