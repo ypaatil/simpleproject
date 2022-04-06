@@ -5,4 +5,6 @@ $username = $data->username;
 
  echo $username;
 
+ echo "Simple title";
+
 ?>
