@@ -19,4 +19,4 @@ echo json_encode($response);
 
 exit(0);
 
-echo 'Best COde';
+echo 'Best Code';
